@@ -234,3 +234,4 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline
 }
 .features .feature-item h3 { color: var(--white); }
 .features .feature-item span { color: var(--green); filter: none; }
+.feature-icon { scale: 1.4; width: 2.2rem; height: 2.2rem; margin-bottom: 0.5rem; object-fit: contain; }
