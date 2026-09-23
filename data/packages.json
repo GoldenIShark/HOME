@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Basic",
+    "price": "Rp100.000",
+    "badge": "Starter",
+    "featured": false,
+    "features": [
+      "1 halaman website",
+      "Responsive untuk HP",
+      "Desain sederhana",
+      "Informasi/profil",
+      "Tombol kontak",
+      "Animasi sederhana",
+      "Hosting website statis",
+      "Revisi terbatas"
+    ],
+    "button": "Pesan Paket",
+    "href": "#contact"
+  },
+  {
+    "name": "Popular",
+    "price": "Rp200.000",
+    "badge": "PALING POPULER",
+    "featured": true,
+    "features": [
+      "Website bisnis",
+      "Beberapa section/halaman",
+      "Informasi produk atau jasa",
+      "Galeri",
+      "Kontak",
+      "Lokasi",
+      "Responsive",
+      "Desain lebih custom",
+      "Revisi"
+    ],
+    "button": "Pesan Paket",
+    "href": "#contact"
+  },
+  {
+    "name": "Premium",
+    "price": "Rp350.000",
+    "badge": "Premium",
+    "featured": false,
+    "features": [
+      "Website lebih lengkap",
+      "Beberapa halaman",
+      "Katalog atau portofolio",
+      "Animasi/interaksi ringan",
+      "Desain custom",
+      "Responsive",
+      "Optimasi tampilan",
+      "Revisi"
+    ],
+    "button": "Pesan Paket",
+    "href": "#contact"
+  },
+  {
+    "name": "Custom",
+    "price": "Mulai Rp100.000",
+    "badge": "Custom",
+    "featured": false,
+    "features": [
+      "Desain sesuai kebutuhan",
+      "Halaman tambahan",
+      "Fitur tambahan",
+      "Struktur website khusus",
+      "Penyesuaian tampilan",
+      "Permintaan khusus lainnya"
+    ],
+    "button": "Konsultasi",
+    "href": "#contact",
+    "customNote": "Harga dapat menyesuaikan tingkat kesulitan dan fitur yang dibutuhkan."
+  }
+]

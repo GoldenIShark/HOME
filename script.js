@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollTopBtn = document.querySelector('.scroll-top');
   const revealItems = document.querySelectorAll('.reveal');
   const siteHeader = document.querySelector('.site-header');
+  const packageList = document.querySelector('#package-list');
 
   // Toggle hamburger menu pada layar mobile
   if (menuToggle && mainNav) {
@@ -38,6 +39,58 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Render daftar paket dari file JSON
+  if (packageList) {
+    fetch('data/packages.json')
+      .then((response) => {
+        if (!response.ok) throw new Error('Gagal memuat data paket');
+        return response.json();
+      })
+      .then((packages) => {
+        packageList.innerHTML = packages.map((pkg) => {
+          const tierClass = `package-card--${pkg.name.toLowerCase()}`;
+          return `
+            <article class="package-card ${tierClass}${pkg.featured ? ' featured' : ''} reveal">
+              <div class="package-badge">${pkg.badge}</div>
+              <div>
+                <h3>${pkg.name}</h3>
+                <p class="package-price">${pkg.price}</p>
+              </div>
+              <ul class="package-features">
+                ${pkg.features.map((feature) => `<li>${feature}</li>`).join('')}
+              </ul>
+              ${pkg.customNote ? `<p class="package-custom-note">${pkg.customNote}</p>` : ''}
+              <a href="${pkg.href}" class="btn ${pkg.name === 'Custom' ? 'btn-secondary' : 'btn-primary'}">${pkg.button}</a>
+            </article>
+          `;
+        }).join('');
+
+        const newRevealItems = packageList.querySelectorAll('.reveal');
+        newRevealItems.forEach((item) => observer.observe(item));
+      })
+      .catch(() => {
+        packageList.innerHTML = `
+          <article class="package-card package-card--basic reveal">
+            <div class="package-badge">Starter</div>
+            <div>
+              <h3>Basic</h3>
+              <p class="package-price">Rp100.000</p>
+            </div>
+            <ul class="package-features">
+              <li>1 halaman website</li>
+              <li>Responsive untuk HP</li>
+              <li>Desain sederhana</li>
+              <li>Informasi/profil</li>
+              <li>Tombol kontak</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary">Pesan Paket</a>
+          </article>
+        `;
+        const fallbackItem = packageList.querySelector('.reveal');
+        if (fallbackItem) observer.observe(fallbackItem);
+      });
+  }
 
   // Animasi saat section masuk tampilan
   const observer = new IntersectionObserver(
