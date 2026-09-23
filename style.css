@@ -143,6 +143,14 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline
 .section-heading h2::after { content: ""; display: block; width: 70px; height: 2px; margin: 1rem auto 0; background: var(--gradient-accent); }
 .about-content { display: grid; gap: 2rem; }
 .about-text { max-width: 780px; margin: 0 auto; text-align: center; font-size: 1.05rem; color: var(--text-secondary); }
+.about-text h3, .about-details h4 { color: var(--white); }
+.about-text h3 { margin: 0 0 0.8rem; font-size: 1.35rem; }
+.about-text p { margin: 0 0 1rem; }
+.about-details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; margin: 1.5rem 0; text-align: left; }
+.about-details h4 { margin: 0 0 0.6rem; font-size: 1rem; }
+.about-list { margin: 0; padding-left: 1.2rem; }
+.about-list li::marker { color: var(--green); }
+.about-scope { padding: 1rem 1.2rem; border-left: 2px solid var(--sea-blue); background: rgba(16, 35, 41, 0.5); text-align: left; }
 .about-features { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
 .feature-pill { background: rgba(16, 35, 41, 0.62); color: var(--text-primary); border: 1px solid var(--border); border-radius: 999px; padding: 0.8rem 1.1rem; font-weight: 700; transition: border-color 0.25s ease, color 0.25s ease; }
 .feature-pill:hover { border-color: rgba(21, 151, 184, 0.6); color: var(--green); }
@@ -341,6 +349,13 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline
   font-size: 0.8rem;
   color: var(--text-secondary);
 }
+.package-estimate {
+  position: relative;
+  z-index: 1;
+  margin: 0.35rem 0 0;
+  color: var(--text-secondary);
+  font-size: 0.86rem;
+}
 .package-features {
   position: relative;
   z-index: 1;
@@ -375,6 +390,10 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline
   margin: 0;
   line-height: 1.7;
 }
+.package-note h3 {
+  margin: 0 0 0.35rem;
+  color: var(--white);
+}
 .package-custom-note {
   position: relative;
   z-index: 1;
@@ -393,7 +412,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline
 }
 
 .contact-box { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; background: rgba(16, 35, 41, 0.8); border: 1px solid rgba(32, 201, 151, 0.2); border-radius: var(--radius); padding: 2rem; margin-bottom: 2rem; }
-.contact-info { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.contact-info { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
 .info-item { padding: 1.3rem; }
 .info-item strong { display: block; margin-bottom: 0.5rem; color: var(--white); }
 .info-item a:hover { color: var(--green); }
@@ -423,12 +442,13 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline
   .hero-copy h1 { font-size: 2.2rem; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .btn { width: 100%; }
+  .about-details { grid-template-columns: 1fr; }
   .contact-box { padding: 1.5rem; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .card-grid, .portfolio-grid, .feature-grid, .package-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .card-grid, .portfolio-grid, .feature-grid, .package-grid, .contact-info { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (min-width: 768px) { .hero-grid { grid-template-columns: 1.1fr 0.9fr; } }

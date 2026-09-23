@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const whatsappNumber = '6289630984238';
   const menuToggle = document.querySelector('.menu-toggle');
   const mainNav = document.querySelector('.main-nav');
   const navLinks = document.querySelectorAll('.main-nav a');
@@ -6,6 +7,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const revealItems = document.querySelectorAll('.reveal');
   const siteHeader = document.querySelector('.site-header');
   const packageList = document.querySelector('#package-list');
+
+  const pesanPaket = (namaPaket, harga) => {
+    const message = namaPaket === 'Custom'
+      ? 'Halo Shark Studio, saya ingin berkonsultasi mengenai Paket Custom. Saya memiliki kebutuhan website yang ingin saya diskusikan.'
+      : `Halo Shark Studio, saya tertarik dengan Paket ${namaPaket} dengan harga ${harga}. Saya ingin mengetahui informasi lebih lanjut mengenai paket tersebut.`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  };
+
+  const bindPackageButtons = () => {
+    packageList.querySelectorAll('.package-order').forEach((button) => {
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        pesanPaket(button.dataset.packageName, button.dataset.packagePrice);
+      });
+    });
+  };
 
   // Toggle hamburger menu pada layar mobile
   if (menuToggle && mainNav) {
@@ -56,18 +74,20 @@ document.addEventListener('DOMContentLoaded', () => {
               <div>
                 <h3>${pkg.name}</h3>
                 <p class="package-price">${pkg.price}</p>
+                <p class="package-estimate">Estimasi: ${pkg.estimate}</p>
               </div>
               <ul class="package-features">
                 ${pkg.features.map((feature) => `<li>${feature}</li>`).join('')}
               </ul>
               ${pkg.customNote ? `<p class="package-custom-note">${pkg.customNote}</p>` : ''}
-              <a href="${pkg.href}" class="btn ${pkg.name === 'Custom' ? 'btn-secondary' : 'btn-primary'}">${pkg.button}</a>
+              <a href="${pkg.href}" data-package-name="${pkg.name}" data-package-price="${pkg.price}" class="btn package-order ${pkg.name === 'Custom' ? 'btn-secondary' : 'btn-primary'}">${pkg.button}</a>
             </article>
           `;
         }).join('');
 
         const newRevealItems = packageList.querySelectorAll('.reveal');
         newRevealItems.forEach((item) => observer.observe(item));
+        bindPackageButtons();
       })
       .catch(() => {
         packageList.innerHTML = `
@@ -84,11 +104,12 @@ document.addEventListener('DOMContentLoaded', () => {
               <li>Informasi/profil</li>
               <li>Tombol kontak</li>
             </ul>
-            <a href="#contact" class="btn btn-primary">Pesan Paket</a>
+            <a href="#contact" data-package-name="Basic" data-package-price="Rp100.000" class="btn btn-primary package-order">Pesan Paket</a>
           </article>
         `;
         const fallbackItem = packageList.querySelector('.reveal');
         if (fallbackItem) observer.observe(fallbackItem);
+        bindPackageButtons();
       });
   }
 
