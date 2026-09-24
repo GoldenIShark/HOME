@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Demo website restoran modern dari Shark Studio.">
+  <meta name="theme-color" content="#171513">
+  <title>Ruang Rasa — Demo Shark Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <div class="loading-screen" id="loading-screen" aria-label="Memuat Ruang Rasa">
+    <div class="loader-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+    <p>RUANG RASA</p>
+    <span class="loader-line"></span>
+  </div>
+
+  <header class="site-header" id="home">
+    <a class="brand" href="#home" aria-label="Ruang Rasa, kembali ke atas">
+      <span class="brand-symbol">RR</span>
+      <span>Ruang Rasa</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
+      <span></span><span></span><span></span><b>Menu</b>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Navigasi utama">
+      <a class="active" href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#location">Location</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#contact">Book a table <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-image"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content shell">
+        <p class="eyebrow hero-reveal"><span></span> Kitchen · Coffee · Stories</p>
+        <h1 id="hero-title" class="hero-reveal">Rasa yang tinggal<br><em>lebih lama.</em></h1>
+        <p class="hero-intro hero-reveal">Ruang hangat untuk hidangan yang jujur, bahan lokal, dan percakapan yang tidak terburu-buru.</p>
+        <div class="hero-actions hero-reveal">
+          <a class="button button-light" href="#menu">Lihat menu <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="#about">Kenali ruang kami <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="hero-meta shell" aria-label="Informasi singkat restoran">
+        <span>Jakarta Selatan · Est. 2024</span>
+        <span>Scroll untuk menjelajah <b aria-hidden="true">↓</b></span>
+      </div>
+    </section>
+
+    <section class="intro section shell" id="about">
+      <div class="section-kicker reveal"><span>01</span><i></i><span>Tentang kami</span></div>
+      <div class="intro-grid">
+        <h2 class="display reveal">Dimasak dengan<br><em>niat baik.</em></h2>
+        <div class="intro-copy reveal">
+          <p class="large-copy">Kami percaya makanan terbaik dimulai dari bahan yang baik dan waktu yang cukup. Setiap piring di Ruang Rasa dibuat untuk terasa dekat, namun tetap meninggalkan kejutan kecil.</p>
+          <a class="arrow-link" href="#location">Temui kami <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="about-visual reveal">
+        <img src="assets/images/food-2.webp" alt="Hidangan pasta dengan saus merah di meja kayu" loading="lazy">
+        <div class="about-note"><span>01 / 03</span><strong>From our<br>kitchen</strong></div>
+      </div>
+    </section>
+
+    <section class="menu-section section" id="menu">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <div><div class="section-kicker"><span>02</span><i></i><span>Yang kami sajikan</span></div><h2 class="display">Temukan<br><em>favoritmu.</em></h2></div>
+          <p>Menu musiman yang dibuat setiap hari. Pilih yang ingin kamu jelajahi.</p>
+        </div>
+        <div class="filter-bar reveal" role="group" aria-label="Filter kategori menu">
+          <button class="filter-button active" type="button" data-filter="all">Semua</button>
+          <button class="filter-button" type="button" data-filter="makanan">Makanan</button>
+          <button class="filter-button" type="button" data-filter="minuman">Minuman</button>
+          <button class="filter-button" type="button" data-filter="dessert">Dessert</button>
+        </div>
+        <div class="menu-grid">
+          <article class="menu-card reveal" data-category="makanan"><img src="assets/images/food-1.webp" alt="Nasi panggang dengan ayam dan sayuran" loading="lazy"><div class="menu-card-body"><span class="menu-tag">Makanan</span><h3>Nasi Panggang Rempah</h3><p>Ayam panggang, nasi gurih, acar segar.</p><strong>Rp 68k</strong></div></article>
+          <article class="menu-card reveal" data-category="makanan"><img src="assets/images/food-2.webp" alt="Pasta tomat dengan daun basil" loading="lazy"><div class="menu-card-body"><span class="menu-tag">Makanan</span><h3>Pasta Sore Hari</h3><p>Tomat panggang, basil, parmesan tua.</p><strong>Rp 62k</strong></div></article>
+          <article class="menu-card reveal" data-category="minuman"><img src="assets/images/food-3.webp" alt="Kopi susu dingin dengan es" loading="lazy"><div class="menu-card-body"><span class="menu-tag">Minuman</span><h3>Es Kopi Senja</h3><p>House blend, susu oat, gula aren.</p><strong>Rp 30k</strong></div></article>
+          <article class="menu-card reveal" data-category="dessert"><img src="assets/images/food-1.webp" alt="Dessert lembut dengan buah segar" loading="lazy"><div class="menu-card-body"><span class="menu-tag">Dessert</span><h3>Panna Cotta Jeruk</h3><p>Vanila, jeruk lokal, crumble mentega.</p><strong>Rp 38k</strong></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="special section shell">
+      <div class="special-image reveal"><img src="assets/images/hero.webp" alt="Meja makan malam dengan hidangan hangat" loading="lazy"></div>
+      <div class="special-content reveal"><div class="section-kicker"><span>03</span><i></i><span>Minggu ini di Ruang Rasa</span></div><p class="special-label">Chef's table</p><h2 class="display">A table<br>for <em>stories.</em></h2><p>Menu sharing 4 hidangan, dirancang untuk dinikmati pelan-pelan. Tersedia setiap Jumat dan Sabtu malam.</p><a class="button button-dark" href="#contact">Pesan sekarang <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <section class="gallery-section section shell" id="gallery">
+      <div class="section-heading reveal"><div><div class="section-kicker"><span>04</span><i></i><span>Potongan suasana</span></div><h2 class="display">Small moments,<br><em>well served.</em></h2></div><p>Kehangatan ada pada detail-detail kecil. Klik gambar untuk melihat lebih dekat.</p></div>
+      <div class="gallery-grid">
+        <button class="gallery-item gallery-wide reveal" type="button" data-image="assets/images/hero.webp" data-alt="Suasana meja makan Ruang Rasa"><img src="assets/images/hero.webp" alt="Suasana meja makan Ruang Rasa" loading="lazy"><span>01</span></button>
+        <button class="gallery-item reveal" type="button" data-image="assets/images/food-1.webp" data-alt="Hidangan utama Ruang Rasa"><img src="assets/images/food-1.webp" alt="Hidangan utama Ruang Rasa" loading="lazy"><span>02</span></button>
+        <button class="gallery-item reveal" type="button" data-image="assets/images/food-3.webp" data-alt="Minuman kopi Ruang Rasa"><img src="assets/images/food-3.webp" alt="Minuman kopi Ruang Rasa" loading="lazy"><span>03</span></button>
+      </div>
+    </section>
+
+    <section class="visit-section section" id="location">
+      <div class="shell visit-grid"><div class="visit-copy reveal"><div class="section-kicker"><span>05</span><i></i><span>Mampir, ya</span></div><h2 class="display">Datang untuk<br><em>tinggal.</em></h2><p>Alamat ini adalah bagian dari demo portfolio. Bayangkan ruang kecil dengan cahaya sore dan aroma roti dari dapur.</p><div class="visit-details"><div><span>Alamat</span><strong>Jl. Kemang Raya No. 18<br>Jakarta Selatan 12730</strong></div><div><span>Jam buka</span><strong>Senin — Minggu<br>10.00 — 22.00 WIB</strong></div></div></div><div class="map-card reveal"><div class="map-grid"></div><div class="map-pin"><span></span><b>Ruang Rasa</b><small>contoh lokasi</small></div><div class="map-label">Kemang, Jakarta Selatan</div></div></div>
+    </section>
+
+    <section class="contact-section section shell" id="contact"><div class="contact-inner reveal"><div class="section-kicker"><span>06</span><i></i><span>Let's talk</span></div><h2 class="display">Meja sudah<br><em>menunggu.</em></h2><p>Untuk reservasi atau sekadar menyapa, hubungi kami lewat kanal demo di bawah.</p><div class="contact-actions"><a class="button button-light" href="https://wa.me/620000000000" target="_blank" rel="noreferrer">WhatsApp <span aria-hidden="true">↗</span></a><a class="button button-outline-light" href="https://instagram.com" target="_blank" rel="noreferrer">Instagram <span aria-hidden="true">↗</span></a></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-top"><a class="brand" href="#home"><span class="brand-symbol">RR</span><span>Ruang Rasa</span></a><p>Good food, good company,<br>good reasons to stay.</p><div class="footer-links"><a href="#about">About</a><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></div></div><div class="shell footer-bottom"><span>© 2024 Ruang Rasa</span><span>Demo Website — Shark Studio</span><span>Jakarta, Indonesia</span></div></footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Pratinjau gambar" aria-hidden="true"><button class="lightbox-close" type="button" aria-label="Tutup gambar">×</button><img id="lightbox-image" src="" alt=""></div>
+  <script src="script.js"></script>
+</body>
+</html>
